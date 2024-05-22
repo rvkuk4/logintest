@@ -17,7 +17,7 @@ import java.net.URL;
 public class LoginTest {
 
 	private AppiumDriver<MobileElement> driver;
-
+	// Setup for collecting Capabilities of iOS/Android devices
 	@BeforeClass
     @org.testng.annotations.Parameters({"platformName", "platformVersion", "deviceName", "browserName"})
     public void setUp(String platformName, String platformVersion, String deviceName, String browserName) throws MalformedURLException {
@@ -76,6 +76,7 @@ public class LoginTest {
 	  		  System.out.println("Unknown error occured during login, please try again");
 	  	  }
 
+	  	  
         // Validate successful login
         MobileElement signoutButton = driver.findElement(By.xpath("//*[@text='Sign Out']"));
         assert signoutButton.isDisplayed() : "Login failed!";
